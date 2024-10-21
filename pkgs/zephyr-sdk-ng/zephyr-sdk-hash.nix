@@ -2331,4 +2331,82 @@
       };
     };
   };
+  "0.17.0" = {
+    "linux-aarch64" = {
+      toolchains = {            
+      };
+    };
+    "linux-x86_64" = {
+      hosttools = {
+        file = "hosttools_linux-x86_64.tar.xz";
+        hash = "";
+      };
+      full = {
+        file = "zephyr-sdk-0.17.0_linux-x86_64.tar.xz";
+        hash = "";
+      };
+      minimal = {
+        file = "zephyr-sdk-0.17.0_linux-x86_64_minimal.tar.xz";
+        hash = "";
+      };
+      toolchains = {
+        "aarch64-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_aarch64-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "arc64-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_arc64-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "arc-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_arc-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "arm-zephyr-eabi" = {
+          file = "toolchain_linux-x86_64_arm-zephyr-eabi.tar.xz";
+          hash = "";
+        };
+        "mips-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_mips-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "nios2-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_nios2-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "riscv64-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_riscv64-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "sparc-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_sparc-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "x86_64-zephyr-elf" = {
+          file = "toolchain_linux-x86_64_x86_64-zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "xtensa-espressif_esp32_zephyr-elf" = {
+          file = "toolchain_linux-x86_64_xtensa-espressif_esp32_zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "xtensa-espressif_esp32s2_zephyr-elf" = {
+          file = "toolchain_linux-x86_64_xtensa-espressif_esp32s2_zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "xtensa-nxp_imx_adsp_zephyr-elf" = {
+          file = "toolchain_linux-x86_64_xtensa-nxp_imx_adsp_zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "xtensa-nxp_imx8m_adsp_zephyr-elf" = {
+          file = "toolchain_linux-x86_64_xtensa-nxp_imx8m_adsp_zephyr-elf.tar.xz";
+          hash = "";
+        };
+        "xtensa-sample_controller_zephyr-elf" = {
+          file = "toolchain_linux-x86_64_xtensa-sample_controller_zephyr-elf.tar.xz";
+          hash = "";
+        };
+      };
+    };
+  };
 }
