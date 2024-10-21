@@ -1,6 +1,24 @@
-{ stdenv, lib, hostPlatform, fetchurl, autoPatchelfHook, makeBinaryWrapper, xz, python3, which
-, hidapi, libftdi1, libusb1, overrideOpenocd, cmake, wget, file
-, version ? "0.17.0", toolchains ? "all" }:
+{ stdenv, 
+  lib, 
+  hostPlatform, 
+  fetchurl, 
+  autoPatchelfHook, 
+  makeBinaryWrapper, 
+  xz, 
+  python310, 
+  which, 
+  hidapi, 
+  libftdi1, 
+  libusb1, 
+  libxcrypt-legacy,
+  ncurses,
+  overrideOpenocd, 
+  cmake, 
+  wget, 
+  file, 
+  version ? "0.17.0", 
+  toolchains ? "all" 
+}:
 
 let pname = "zephyr-sdk";
     system = lib.splitString "-" hostPlatform.system;
@@ -28,7 +46,7 @@ in stdenv.mkDerivation {
   sourceRoot = "${pname}-${version}";
 
   nativeBuildInputs = [ autoPatchelfHook makeBinaryWrapper which file cmake wget ];
-  buildInputs = [ xz python3 hidapi libftdi1 libusb1 ];
+  buildInputs = [ xz python310 hidapi libftdi1 libusb1 libxcrypt-legacy ncurses];
 
   postUnpack = ''
     mv ${lib.concatStringsSep " " install-toolchains} $sourceRoot
@@ -41,9 +59,9 @@ in stdenv.mkDerivation {
     find $out -type f -perm -a+x -name '*-py' | while read prog; do
       echo "Wrap python program: $prog"
       wrapProgram $prog \
-        --set NIX_PYTHONPREFIX ${python3} \
-        --set NIX_PYTHONEXECUTABLE ${python3}/bin/python3.8 \
-        --set NIX_PYTHONPATH ${python3}/lib/python3.8/site-packages
+        --set NIX_PYTHONPREFIX ${python310} \
+        --set NIX_PYTHONEXECUTABLE ${python310}/bin/python3.10 \
+        --set NIX_PYTHONPATH ${python310}/lib/python3.10/site-packages
     done
   '';
 
